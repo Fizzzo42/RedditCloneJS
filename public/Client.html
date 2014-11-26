@@ -15,7 +15,10 @@
     <script src="Libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="Libs/angular/angular.js"></script>
     <script src="Libs/angular-route/angular-route.js"></script>
-    <script src="app/app.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/MenuCtrl.js"></script>
+    <script src="js/controllers/dataController.js"></script>
 
     <script src="core.js"></script>
     <script src="dataService.js"></script>
@@ -27,7 +30,7 @@
 
 <!-- Menu -->
 
-<div ng-controller="SubmitNewLinkCtrl">
+<div ng-controller="MenuCtrl">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <!-- Header -->
@@ -61,20 +64,25 @@
 
 
     <!-- Submit new link -->
-
     <div class="panel panel-default" ng-show="visible">
         <div class="panel-heading">
             <h3 class="panel-title">Submit new link</h3>
         </div>
         <div class="panel-body">
-            Panel content
+            <!-- Submit new Link Content -->
+            <img src="img/hasli.png">
+            <div class="form-group form-right">
+                <input ng-model="title" type="text" class="form-control" placeholder="Title">
+                <input ng-model="url" type="text" class="form-control" placeholder="URL">
+                <button ng-click="submitNewLink()" class="btn btn-default">Submit new link</button>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- Content -->
+<!-- Reddit Entries -->
 
-<div id="content" ng-controller="dataController">
+<div id="content" ng-controller=dataController>
     <div ng-repeat="entry in entries">
 
         <div class="container jumbotron">

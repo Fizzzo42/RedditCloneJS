@@ -3,6 +3,11 @@
         postLogin: function (name, password, callback) {
             $.post("/login", {"name": name, "password": password}).done(function (data) {
                 callback(data);
+                if(data){
+                    sessionStorage.redditName = name;
+                    sessionStorage.redditPassword = password;
+                }
+
             });
         },
         getLogin: function (callback) {

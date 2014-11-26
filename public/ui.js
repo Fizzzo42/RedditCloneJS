@@ -18,22 +18,20 @@
     });
 
     socket.on('message', function (data) {
-        console.log("message got");
+        switch(data.action){
+            case 'AddLink':
+            console.log("We got a new Link");
+            break;
+
+            default:
+            console.log("Message received: " + data.action + " (Unknown)");
+        }
 
         mydata.getEntries(function (data) {
             refreshEntries(data);
         });
 
-        // document.write(data);
-        //document.body.innerHTML = data;
     });
-
-    //function rateUp()
-    //window.data.postEntry("Neu","www.blaaa.com");
-    
-    /*socket.on('message', function (data) {
-        alert("We got a message");
-    })*/
 
     var refreshEntries = function(data){
         var $scope = angular.element($('#content')).scope();
@@ -42,6 +40,18 @@
             $scope.entries = data;
         });
     };
+
+    //if(sessionStorage.redditName && sessionStorage.redditPassword)
+        //alert("todo, login");
+
+    //function rateUp()
+    //window.data.postEntry("Neu","www.blaaa.com");
+    
+    /*socket.on('message', function (data) {
+        alert("We got a message");
+    })*/
+
+    
 
 
 })(jQuery);
