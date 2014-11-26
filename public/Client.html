@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="RedditApp">
+<head>
+
+    <title>InTeTestat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="Libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="client.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    <script src="Libs/doT/doT.js"></script>
+    <script src="Libs/jquery-2.0.3.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="Libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Libs/angular/angular.js"></script>
+    <script src="Libs/angular-route/angular-route.js"></script>
+    <script src="app/app.js"></script>
+
+    <script src="core.js"></script>
+    <script src="dataService.js"></script>
+    <script src="init.js"></script>
+
+
+</head>
+<body>
+
+<!-- Menu -->
+
+<div ng-controller="SubmitNewLinkCtrl">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Header -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">Reddit Clone</a>
+            </div>
+            <!-- Submit New Link -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="" ng-click="visible=!visible">Submit New Link</a></li>
+                </ul>
+                <!-- Forms to login-->
+                <div class="navbar-form navbar-right" ng-show="!loggedIn">
+                    <div class="form-group">
+                        <input ng-model="username" type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input ng-model="password" type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="login()" class="btn btn-default">Login</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default">Register</button>
+                    </div>
+                </div>
+                <div class="navbar-right" ng-show="loggedIn">Welcome {{username}}</div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Submit new link -->
+
+    <div class="panel panel-default" ng-show="visible">
+        <div class="panel-heading">
+            <h3 class="panel-title">Submit new link</h3>
+        </div>
+        <div class="panel-body">
+            Panel content
+        </div>
+    </div>
+</div>
+
+<!-- Content -->
+
+<div id="content" ng-controller="dataController">
+    <div ng-repeat="entry in entries">
+
+        <div class="container jumbotron">
+            <div class="row">
+                <div class="col-xs-1">
+                    <button type="button" class="btn btn-default" ng-click="voteUp(entry.id)">
+                        <span class="glyphicon glyphicon-chevron-up" ></span>
+                    </button>
+                    <br/>
+                    {{entry.rating.value}}<br/>
+                    <button type="button" class="btn btn-default" ng-click="voteDown(entry.id)">
+                        <span class="glyphicon glyphicon-chevron-down" ></span>
+                    </button>
+                </div>
+                <div class="col">
+                    <h2>{{entry.title}}</h2>
+                    submitted {{entry.createTimeDisplay}} by {{entry.author}}
+                    <br/>
+                    {{entry.comments.length}} comments
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="ui.js"></script>
+
+
+</body>
+
+</html>
