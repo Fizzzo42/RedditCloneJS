@@ -14,7 +14,6 @@
             $.getJSON("/login", {}, callback);
         },
         getEntries: function (callback) {
-            console.log("Trying to get entries!");
             $.getJSON("/entries", {}, callback);
         },
         postEntry: function (title, url) {
@@ -25,6 +24,9 @@
         },
         postrateDown: function (id) {
             $.post("/entry/" + id + "/down", {});
+        },
+        postLogout: function (callback) {
+            $.post("/logout", {}, callback);
         }
     };
 })(jQuery);

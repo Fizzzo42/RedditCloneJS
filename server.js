@@ -81,12 +81,10 @@ app.get('/login', function (req, res) {
 	if( !!user && post.password == user.password)
 	{		
 		req.session.user_id = user.id;
-        //res.send("Welcome " + post.name + "!");
 		res.json(true);
 		return;
 	}	
 	res.json(false);
-     //res.send("Wrong user data!");
 });
 
  app.post('/register', function(req, res) {

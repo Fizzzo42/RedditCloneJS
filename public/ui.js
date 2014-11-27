@@ -2,12 +2,13 @@
 
 (function ($) {
 
-    var socket = io.connect('http://localhost:4730/');
+    var socket = io.connect('http://152.96.234.127:4730/');
 
     var redditApp = angular.module('RedditApp');
 
     socket.on('connect', function (data) {
         console.log("HAHA");
+        ohSnap('We are connected', 'green');
         mydata.getEntries(function (data) {
             refreshEntries(data);
         });
@@ -15,17 +16,17 @@
     });
     socket.on('disconnect', function (data) {
         console.log("BYE");
+        ohSnap('Connection lost!', 'red');
     });
 
     socket.on('message', function (data) {
         switch(data.action){
             case 'AddLink':
-            console.log("We got a new Link");
+            ohSnap('New Link loaded!', 'blue');
             break;
-
-            default:
-            console.log("Message received: " + data.action + " (Unknown)");
         }
+
+        console.log("Message received: " + data.action);
 
         mydata.getEntries(function (data) {
             refreshEntries(data);

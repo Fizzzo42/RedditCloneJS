@@ -16,6 +16,18 @@ angular.module('RedditApp').controller('MenuCtrl', function MenuCtrl($scope){
         });
     };
 
+    $scope.logout = function () {
+    	mydata.postLogout(function (data) {
+    		if(data){
+    			sessionStorage.redditName = "";
+    			sessionStorage.redditPassword = "";
+    			$scope.loggedIn = false;
+            	$scope.$apply();
+    		}
+    	});
+    	
+    };
+
     $scope.submitNewLink = function() {
     	mydata.postEntry($scope.title, $scope.url);
     };
