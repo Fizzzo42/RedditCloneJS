@@ -1,0 +1,30 @@
+<div id="content" ng-controller=dataController>
+    <div ng-repeat="entry in entries">
+
+        <div class="container jumbotron">
+            <div class="row">
+                <div class="col-xs-1">
+                    <button type="button" class="btn btn-default" ng-click="voteUp(entry.id)">
+                        <span class="glyphicon glyphicon-chevron-up" ></span>
+                    </button>
+                    <br/>
+                    {{entry.rating.value}}<br/>
+                    <button type="button" class="btn btn-default" ng-click="voteDown(entry.id)">
+                        <span class="glyphicon glyphicon-chevron-down" ></span>
+                    </button>
+                </div>
+                <div class="col">
+                    <a href="{{entry.url}}"><h2>{{entry.title}}</h2></a>
+                    submitted {{entry.createTimeDisplay}} by {{entry.author}}
+                    <br/>
+                    {{entry.comments.length}} comments
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="ui.js"></script>

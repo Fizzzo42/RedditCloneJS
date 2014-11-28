@@ -2,7 +2,7 @@
 
 (function ($) {
 
-    var socket = io.connect('http://152.96.234.127:4730/');
+    var socket = io.connect('http://localhost:4730/');
 
     var redditApp = angular.module('RedditApp');
 

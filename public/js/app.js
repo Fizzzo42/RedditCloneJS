@@ -2,23 +2,7 @@
 
 /* Controllers */
 var redditApp = angular.module('RedditApp', [
-    'ngRoute']).config(function($routeProvider) {
-        
-        var routeConfig = {
-            controller: 'MenuCtrl',
-            templateUrl: 'teest.html'
-        };
-
-        $routeProvider
-            .when('/', routeConfig)
-            .when('/:status', routeConfig)
-            .otherwise({
-                redirectTo: '/'
-            });
-
-    });
-
-
-
-
-
+    'ngRoute','RedditApp.view1']).
+config(['$routeProvider', function($routeProvider) {
+  $routeProvider.otherwise({redirectTo: '/view1'});
+}]);
