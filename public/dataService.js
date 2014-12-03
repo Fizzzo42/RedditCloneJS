@@ -40,6 +40,16 @@
                 $scope.entries = data;
             });
         },
+        refreshEntry: function(data){
+            var $scope = angular.element($('#posts')).scope();
+            //var $scope = angular.element('$0').scope();
+            $scope.$apply(function() {
+                $scope.entry = data;
+            });
+        },
+        getEntryById: function(id, callback){
+            $.getJSON("/entry/" + id, {}, callback);
+        },
         getSocket: function(){
             return socket;
         }

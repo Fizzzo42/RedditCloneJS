@@ -11,7 +11,7 @@ config(['$routeProvider', function($routeProvider) {
     }).
       when('/post/:postId', {
         templateUrl: 'views/view2.html',
-        controller: ''
+        controller: 'postController'
       }).
       otherwise({
         redirectTo: '/links'

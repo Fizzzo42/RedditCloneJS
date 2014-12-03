@@ -25,8 +25,11 @@
         socket.on('message', function (data) {
             switch(data.action){
                 case 'AddLink':
-                ohSnap('New Link loaded!', 'blue');
-                refresh();
+                    ohSnap('New Link loaded!', 'blue');
+                    refresh();
+                break;
+                    case 'Rated':
+                    refresh();
                 break;
             }
 

@@ -5,7 +5,7 @@
 
         <div class="container jumbotron">
             <div class="row">
-                <div class="col-xs-1">
+                <div class="col-md-1 text-center">
                     <button type="button" class="btn btn-default" ng-click="voteUp(entry.id)" ng-show="loggedIn">
                         <span class="glyphicon glyphicon-chevron-up" ></span>
                     </button>
@@ -15,7 +15,7 @@
                         <span class="glyphicon glyphicon-chevron-down" ></span>
                     </button>
                 </div>
-                <div class="col">
+                <div class="col-md-7">
                     <a href="{{entry.url}}"><h2>{{entry.title}}</h2></a>
                     submitted {{entry.createTimeDisplay}} by {{entry.author}}
                     <br/>
