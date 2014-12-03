@@ -10,7 +10,8 @@ State: **In Progress** (about 95% finished)
 
 ### How it works
 ![Entries (/links)](comingsoon "Main Page")  
-![Entry (/post/:id)](comingsoon "Comment Page")
+![Entry (/post/:id)](comingsoon "Comment Page")  
+Coming soon...
 
 ### Setup
 1. Install [NodeJS](http://nodejs.org/download "NodeJS Download Page")
