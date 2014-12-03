@@ -20,6 +20,7 @@ angular.module('RedditApp').controller('postController', ['$scope','$routeParams
     
     $scope.submitNewComment = function(){
     	mydata.postCommentOnEntry($scope.entry.id, $scope.taComment);
+    	$scope.taComment = "";
     };
 	  
 }]);

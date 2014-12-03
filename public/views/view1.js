@@ -2,8 +2,6 @@
 
 $( document ).ready(function (){
 
-	mydata.getEntries(function (data) {
-        mydata.refreshEntries(data);
-    });
+	mydata.refreshView();
 
 });

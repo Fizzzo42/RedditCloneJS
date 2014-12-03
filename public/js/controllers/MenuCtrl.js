@@ -29,6 +29,7 @@ angular.module('RedditApp').controller('MenuCtrl', function MenuCtrl($scope){
     };
 
     $scope.submitNewLink = function() {
+        $scope.visible = false;
     	mydata.postEntry($scope.title, $scope.url);
     };
 
