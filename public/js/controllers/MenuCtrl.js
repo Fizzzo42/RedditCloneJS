@@ -11,10 +11,18 @@ angular.module('RedditApp').controller('MenuCtrl', function MenuCtrl($scope){
     	if(sessionStorage.redditPassword)
     		$scope.password = sessionStorage.redditPassword;
 
-        mydata.postLogin($scope.username, $scope.password, function (data) {
-            $scope.loggedIn = data;
-            $scope.$apply();
-        });
+        if($scope.username && $scope.password){
+            mydata.postLogin($scope.username, $scope.password, function (data) {
+                $scope.loggedIn = data;
+                $scope.$apply();
+                if(!data){
+                    alert("Wrong login data!");
+                    sessionStorage.redditName = "";
+                    sessionStorage.redditPassword = "";
+                }
+            });
+        }else
+            alert("Please fill in login data!");
     };
 
     $scope.logout = function () {
@@ -34,6 +42,8 @@ angular.module('RedditApp').controller('MenuCtrl', function MenuCtrl($scope){
             $scope.newLinkVisible = false;
             $scope.registerVisible = false;
             mydata.postEntry($scope.title, $scope.url);
+            $scope.title = "";
+            $scope.url = "";
         }
         else
             alert("Please enter valid data!");
