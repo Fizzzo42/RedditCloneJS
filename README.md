@@ -2,7 +2,7 @@
 
 ## Task
 This Project is part of a school project. Goal was to code a Reddit Clone using Javascript Front-End Frameworks.  
-For more information, see File [task.pdf](http://de.wikipedia.org/ "Task Description from teacher")  
+For more information, see File [task.pdf](https://github.com/Fizzzo42/RedditCloneJS/blob/master/task.pdf?raw=true "Task Description from teacher")  
 The same project was realized in another Project (Client & Server) using **JSF**. This project focuses only on the Client part though. The Server part was already given.
 
 ## Current State
@@ -11,7 +11,7 @@ State: **In Progress** (about 95% finished)
 ### How it works
 ![Entries (/links)](comingsoon "Main Page")  
 ![Entry (/post/:id)](comingsoon "Comment Page")  
-Coming soon...
+Images coming soon...
 
 ### Setup
 1. Install [NodeJS](http://nodejs.org/download "NodeJS Download Page")
