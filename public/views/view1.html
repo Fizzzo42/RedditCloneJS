@@ -4,12 +4,12 @@
         <div class="container jumbotron">
             <div class="row">
                 <div class="col-xs-1">
-                    <button type="button" class="btn btn-default" ng-click="voteUp(entry.id)">
+                    <button type="button" class="btn btn-default" ng-click="voteUp(entry.id)" ng-show="loggedIn">
                         <span class="glyphicon glyphicon-chevron-up" ></span>
                     </button>
                     <br/>
                     {{entry.rating.value}}<br/>
-                    <button type="button" class="btn btn-default" ng-click="voteDown(entry.id)">
+                    <button type="button" class="btn btn-default" ng-click="voteDown(entry.id)" ng-show="loggedIn">
                         <span class="glyphicon glyphicon-chevron-down" ></span>
                     </button>
                 </div>
