@@ -29,10 +29,15 @@ angular.module('RedditApp').controller('MenuCtrl', function MenuCtrl($scope){
     };
 
     $scope.submitNewLink = function() {
-        $scope.visible = false;
-    	mydata.postEntry($scope.title, $scope.url);
+        if($scope.title && $scope.url){
+            $scope.visible = false;
+            mydata.postEntry($scope.title, $scope.url);
+        }
+        else
+            alert("Please enter valid data!");
     };
 
+    // Auto Login if data in session
     if(sessionStorage.redditName && sessionStorage.redditPassword)
     	$scope.login();
 
