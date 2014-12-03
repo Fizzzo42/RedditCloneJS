@@ -4,7 +4,6 @@
 
     $( document ).ready(function (){
 
-        //var socket = io.connect('http://localhost:4730/');
         var socket = mydata.getSocket();
 
         var redditApp = angular.module('RedditApp');
@@ -12,10 +11,6 @@
         socket.on('connect', function (data) {
             console.log("HAHA");
             ohSnap('We are connected', 'green');
-            /*mydata.getEntries(function (data) {
-                mydata.refreshEntries(data);
-            });*/
-            //socket.emit('addPost');
         });
         socket.on('disconnect', function (data) {
             console.log("BYE");
@@ -30,7 +25,7 @@
                     break;
                 case 'Rated':
                     myview.refreshView();
-                break;
+                    break;
                 case 'AddComment':
                     ohSnap('New Comment loaded!', 'blue');
                     myview.refreshView();
@@ -40,17 +35,6 @@
             console.log("Message received: " + data.action);
 
         });
-
-        //if(sessionStorage.redditName && sessionStorage.redditPassword)
-            //alert("todo, login");
-
-        //function rateUp()
-        //window.data.postEntry("Neu","www.blaaa.com");
-        
-        /*socket.on('message', function (data) {
-            alert("We got a message");
-        })*/
-
     });
 
 

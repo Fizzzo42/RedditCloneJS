@@ -119,7 +119,6 @@ app.post('/entry', function(req, res) {
  	entries.push(newLink);
  	res.json(newLink);
  	io.sockets.emit('message', { action: "AddLink" });
-    //io.sockets.emit('message');
 });
 
 app.get('/entry/:id', function(req, res) {
