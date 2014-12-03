@@ -2,7 +2,18 @@
 
 /* Controllers */
 var redditApp = angular.module('RedditApp', [
-    'ngRoute','RedditApp.view1']).
+    'ngRoute']).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/links'});
+  $routeProvider.
+      when('/links', {
+        templateUrl: 'views/view1.html',
+        controller: 'dataController'
+    }).
+      when('/post/:postId', {
+        templateUrl: 'views/view2.html',
+        controller: ''
+      }).
+      otherwise({
+        redirectTo: '/links'
+      });
 }]);

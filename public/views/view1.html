@@ -1,3 +1,5 @@
+<script src="/views/view1.js"></script>
+
 <div id="content" ng-controller=dataController>
     <div ng-repeat="entry in entries">
 
@@ -17,11 +19,10 @@
                     <a href="{{entry.url}}"><h2>{{entry.title}}</h2></a>
                     submitted {{entry.createTimeDisplay}} by {{entry.author}}
                     <br/>
-                    {{entry.comments.length}} comments
+                    <a href="#/post/{{entry.id}}">{{entry.comments.length}} comments</a>
                 </div>
             </div>
         </div>
-
 
     </div>
 

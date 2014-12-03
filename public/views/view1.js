@@ -1,10 +1,9 @@
 'use strict';
 
-angular.module('RedditApp.view1', ['ngRoute'])
+$( document ).ready(function (){
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/links', {
-    templateUrl: '/views/view1.html',
-    controller: 'dataController'
-  });
-}]);
+	mydata.getEntries(function (data) {
+        mydata.refreshEntries(data);
+    });
+
+});

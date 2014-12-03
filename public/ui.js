@@ -4,16 +4,17 @@
 
     $( document ).ready(function (){
 
-        var socket = io.connect('http://localhost:4730/');
+        //var socket = io.connect('http://localhost:4730/');
+        var socket = mydata.getSocket();
 
         var redditApp = angular.module('RedditApp');
 
         socket.on('connect', function (data) {
             console.log("HAHA");
             ohSnap('We are connected', 'green');
-            mydata.getEntries(function (data) {
-                refreshEntries(data);
-            });
+            /*mydata.getEntries(function (data) {
+                mydata.refreshEntries(data);
+            });*/
             //socket.emit('addPost');
         });
         socket.on('disconnect', function (data) {
@@ -25,23 +26,23 @@
             switch(data.action){
                 case 'AddLink':
                 ohSnap('New Link loaded!', 'blue');
+                refresh();
                 break;
             }
 
             console.log("Message received: " + data.action);
 
-            mydata.getEntries(function (data) {
-                refreshEntries(data);
-            });
+           // alert(window.location.hash);
+
+            
 
         });
 
-        var refreshEntries = function(data){
-            var $scope = angular.element($('#content')).scope();
-            //var $scope = angular.element('$0').scope();
-            $scope.$apply(function() {
-                $scope.entries = data;
-            });
+        var refresh = function(){
+            if(window.location.hash.indexOf("/links") !== -1)
+                mydata.getEntries(function (data) {
+                    mydata.refreshEntries(data);
+                });
         };
 
         //if(sessionStorage.redditName && sessionStorage.redditPassword)

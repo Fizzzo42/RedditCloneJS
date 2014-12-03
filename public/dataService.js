@@ -1,4 +1,7 @@
 ﻿(function ($) {
+
+    var socket = io.connect('http://localhost:4730/');
+
     $.fn.dataService = {
         postLogin: function (name, password, callback) {
             $.post("/login", {"name": name, "password": password}).done(function (data) {
@@ -29,6 +32,16 @@
         },
         postLogout: function (callback) {
             $.post("/logout", {}, callback);
+        },
+        refreshEntries: function(data){
+            var $scope = angular.element($('#content')).scope();
+            //var $scope = angular.element('$0').scope();
+            $scope.$apply(function() {
+                $scope.entries = data;
+            });
+        },
+        getSocket: function(){
+            return socket;
         }
     };
 })(jQuery);
