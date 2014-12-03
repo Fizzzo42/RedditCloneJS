@@ -18,6 +18,8 @@ angular.module('RedditApp').controller('postController', ['$scope','$routeParams
 		mydata.commentRateDown(id);
     };
     
-
+    $scope.submitNewComment = function(){
+    	mydata.postCommentOnEntry($scope.entry.id, $scope.taComment);
+    };
 	  
 }]);

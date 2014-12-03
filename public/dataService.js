@@ -56,6 +56,9 @@
         commentRateDown: function(id){
             $.post("/comment/" + id + "/down", {});
         },
+        postCommentOnEntry: function(id, text){
+            $.post("/entry/" + id + "/comment", {"text":text});
+        },
         getSocket: function(){
             return socket;
         }

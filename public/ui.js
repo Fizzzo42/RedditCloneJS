@@ -27,10 +27,14 @@
                 case 'AddLink':
                     ohSnap('New Link loaded!', 'blue');
                     refresh();
-                break;
-                    case 'Rated':
+                    break;
+                case 'Rated':
                     refresh();
                 break;
+                case 'AddComment':
+                    ohSnap('New Comment loaded!', 'blue');
+                    refresh();
+                    break;
             }
 
             console.log("Message received: " + data.action);
