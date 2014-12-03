@@ -50,6 +50,12 @@
         getEntryById: function(id, callback){
             $.getJSON("/entry/" + id, {}, callback);
         },
+        commentRateUp: function(id){
+            $.post("/comment/" + id + "/up", {});
+        },
+        commentRateDown: function(id){
+            $.post("/comment/" + id + "/down", {});
+        },
         getSocket: function(){
             return socket;
         }

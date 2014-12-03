@@ -2,8 +2,6 @@
 
 <div id="posts" ng-controller="postController">
 
-{{entry}}
-
 	<div class="container jumbotron">
             <div class="row">
                 <div class="col-md-1 text-center">
@@ -26,20 +24,22 @@
         </div>
 
         <div id="comments" ng-repeat="comment in entry.comments">
-        	<div class="container jumbotron">
+        	<div class="container">
         		<div class="row">
 	                <div class="col-md-1 text-center">
-	                    <button type="button" class="btn btn-default" ng-click="voteUp(comment.id)" ng-show="loggedIn">
+	                    <button type="button" class="btn btn-sm" ng-click="commentVoteUp(comment.id)" ng-show="loggedIn">
 	                        <span class="glyphicon glyphicon-chevron-up" ></span>
 	                    </button>
 	                    <br/>
 	                    {{comment.rating.value}}<br/>
-	                    <button type="button" class="btn btn-default" ng-click="voteDown(comment.id)" ng-show="loggedIn">
+	                    <button type="button" class="btn btn-sm" ng-click="commentVoteDown(comment.id)" ng-show="loggedIn">
 	                        <span class="glyphicon glyphicon-chevron-down" ></span>
 	                    </button>
 	                </div>
 	                <div class="col-md-7">
 	                    <b>{{comment.author}}</b> {{comment.createTimeDisplay}}
+	                    <br/>
+	                    <i>{{comment.text}}</i>
 	                </div>
             	</div>
     		</div>

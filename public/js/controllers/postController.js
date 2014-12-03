@@ -10,4 +10,14 @@ angular.module('RedditApp').controller('postController', ['$scope','$routeParams
         mydata.postrateDown(id);
     };
 
+    $scope.commentVoteUp = function (id){
+    	mydata.commentRateUp(id);
+    };
+
+    $scope.commentVoteDown = function (id){
+		mydata.commentRateDown(id);
+    };
+    
+
+	  
 }]);
