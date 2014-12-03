@@ -177,7 +177,6 @@ io = io.listen(app.listen(process.env.PORT || 4730));
 
 io.sockets.on('connection', function (socket) {
     socket.emit('message', entries);
-    console.log("We have a new visitor!")
 });
 
 io.sockets.on('disconnect', function (socket) {

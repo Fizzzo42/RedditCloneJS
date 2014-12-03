@@ -41,7 +41,7 @@
             <!-- Submit New Link -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="" ng-click="visible=!visible" ng-show="loggedIn">Submit New Link</a></li>
+                    <li><a href="" ng-click="newLinkVisible=!newLinkVisible" ng-show="loggedIn">Submit New Link</a></li>
                 </ul>
                 <!-- Forms to login-->
                 <div class="navbar-form navbar-right" ng-show="!loggedIn">
@@ -55,7 +55,7 @@
                         <button ng-click="login()" class="btn btn-default">Login</button>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-default">Register</button>
+                        <button ng-click="registerVisible=!registerVisible" class="btn btn-default">Register</button>
                     </div>
                 </div>
                 <div class="navbar-right" ng-show="loggedIn">
@@ -71,7 +71,7 @@
     <div id="ohsnap"></div>
 
     <!-- Submit new link -->
-    <div class="panel panel-default" ng-show="visible && loggedIn">
+    <div class="panel panel-default" ng-show="newLinkVisible && loggedIn">
         <div class="panel-heading">
             <h3 class="panel-title">Submit new link</h3>
         </div>
@@ -102,6 +102,37 @@
             </div>
         </div>
     </div>
+
+    <!-- Register -->
+    <div ng-show="registerVisible" class="panel panel-default">
+        <br/>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-5">
+              <input ng-model="reg_id" type="text" class="form-control" placeholder="Username">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-5">
+              <input ng-model="reg_pw1" type="password" class="form-control" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Repeat Password</label>
+            <div class="col-sm-5">
+              <input ng-model="reg_pw2" type="password" class="form-control" placeholder="Repeat Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button ng-click="register()" type="submit" class="btn btn-default">Register</button>
+            </div>
+          </div>
+        </form>
+    </div>
+    <br/>
 </div>
 
 

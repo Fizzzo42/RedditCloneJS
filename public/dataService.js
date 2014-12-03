@@ -58,6 +58,9 @@
         postCommentOnEntry: function(id, text){
             $.post("/entry/" + id + "/comment", {"text":text});
         },
+        postRegister: function (name, password, callback){
+            $.post("/register", {"name":name, "password":password}, callback);
+        },
         getSocket: function(){
             return socket;
         }
