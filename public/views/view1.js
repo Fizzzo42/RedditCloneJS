@@ -2,6 +2,6 @@
 
 $( document ).ready(function (){
 
-	mydata.refreshView();
+	myview.refreshView();
 
 });

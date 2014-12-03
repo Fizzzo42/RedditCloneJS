@@ -5,7 +5,7 @@ $( document ).ready(function (){
 	var pathArray = window.location.hash.split( '/' );
 	var id = pathArray[pathArray.length - 1];
 
-	mydata.refreshView();
+	myview.refreshView();
 
 });
 
