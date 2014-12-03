@@ -26,14 +26,14 @@
             switch(data.action){
                 case 'AddLink':
                     ohSnap('New Link loaded!', 'blue');
-                    refreshView();
+                    mydata.refreshView();
                     break;
                 case 'Rated':
-                    refreshView();
+                    mydata.refreshView();
                 break;
                 case 'AddComment':
                     ohSnap('New Comment loaded!', 'blue');
-                    refreshView();
+                    mydata.refreshView();
                     break;
             }
 

@@ -36,6 +36,7 @@
         refreshEntries: function(data){
             var $scope = angular.element($('#content')).scope();
             $scope.$apply(function() {
+                data.sort(function(entryA, entryB){return entryB.rating.value-entryA.rating.value});
                 $scope.entries = data;
             });
         },
