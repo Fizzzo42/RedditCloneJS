@@ -33,7 +33,7 @@ State: **In Progress** (about 95% finished)
 
 ## Q&A
 * What is Reddit?
-	* Check it out yourself: [Reddit](http://reddit.com/download "Reddit")
+	* Check it out yourself: [Reddit](http://reddit.com/ "Reddit")
 * Which school was this project made for?
 	* School Name: HSR Rapperswil
 	* Module Name: Internettechnologien (Internet Technologies)
