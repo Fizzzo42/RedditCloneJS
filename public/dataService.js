@@ -17,6 +17,8 @@
             $.getJSON("/entries", {}, callback);
         },
         postEntry: function (title, url) {
+            if(url.indexOf("http") === -1)
+                url = "http://" + url;
             $.post("/entry", {"title": title, "url": url});
         },
         postrateUp: function (id) {
