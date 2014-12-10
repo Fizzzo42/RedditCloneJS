@@ -1,6 +1,6 @@
 ﻿(function ($) {
 
-    var socket = io.connect('http://152.96.233.111:4730/');
+    var socket = io.connect('http://localhost:4730/');
 
     $.fn.dataService = {
         postLogin: function (name, password, callback) {
